@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <!-- 处理乱码 -->
+	 <constant name="struts.i18n.encoding" value="UTF-8"/>
+	 <!-- 指定Action请求后缀 -->
+	 <constant name="struts.action.extension" value="action,,html"/>
+	 <!-- 设置浏览器缓存  开发的时候禁止 ， 上线之后要开启 -->
+	 <constant name="struts.static.browserCache" value="false"/>
+	 <!-- XML配置文件修改之后 , 自动重新加载 -->
+	 <constant name="struts.configuration.xml.reload" value="true"/>
+	 <!-- 显示更详细的错误信息 ， 开发模式 -->
+	 <constant name="struts.devMode" value="true"/>
+	 <!-- 是否支持动态方法调用 -->
+	 <constant name="struts.DynamicMethodInvocation" value="true"/>
+	 <!-- 支持静态对象调用 -->
+	 <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+	 <!-- 由spring实例化对象 -->
+	 <constant name="struts.objectFactory" value="spring"/>
+	 
+	 
+	 <package name="default" extends="struts-default" namespace="/">
+	 		<default-action-ref name="index" />
+	 		<action name="index" class="org.yicou.action.IndexAction" >
+	 			<result name="success">/home.jsp</result>
+	 		</action>
+	 		<action name="music" class="org.yicou.action.MusicAction" method="Music">
+ 				<result name="success">/music.jsp</result>
+ 			</action>
+	 </package>
+	
+	<package name="user" extends="struts-default" namespace="/user">
+		<action name="login" class="org.yicou.action.UserAction" method="login">
+	  		 <result name="success">/success.jsp</result>
+	  		 <result name="index">/login.jsp</result>
+	  		 <result name="error">/login.jsp</result>
+		</action>
+		<action name="regist" class="org.yicou.action.UserAction" method="regist">
+	  		 <result name="success">/mailok.html</result>
+	  		 <result name="index">/regist.jsp</result>
+	  		 <result name="error">/mailerr.html</result>
+		</action>
+		<action name="uservali" class="org.yicou.action.UserAction" method="userVali"></action>
+		<action name="mailvali" class="org.yicou.action.UserAction" method="mailVali">
+			<result name="success">/valiok.html</result>
+			<result name="error">/valierr.jsp</result>
+		</action>
+ 	</package>
+ 	
+ 	<package name="api" extends="struts-default" namespace="/api">
+ 		<action name="return" class="org.yicou.action.ApiAction" method="returnGoods" />
+ 		<action name="get" class="org.yicou.action.ApiAction" method="getGoods" /> 
+ 	</package>
+ 	
+ 	<package name="music" extends="struts-default" namespace="/music">
+ 		<action name="MusicSearch" class="org.yicou.action.MusicAction" method="MusicSearch"></action>
+ 		<action name="MusicCommend" class="org.yicou.action.MusicAction" method="MusicCommend"></action>
+ 		<action name="GetLrc" class="org.yicou.action.MusicAction" method="getLrc"></action>
+ 		<action name="GetLrcJson" class="org.yicou.action.MusicAction" method="getLrcJson"></action>
+ 	</package>
+</struts>    

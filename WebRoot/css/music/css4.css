@@ -1,0 +1,127 @@
+body
+{
+    font: 18px "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+#header
+{
+	height: 180px;
+}
+#logo img
+{
+	width:180px;
+	height: 180px;
+}
+#guider	ul li
+{
+	font-size: 18px;
+	line-height:45px;
+	margin-left: 45px;
+}
+#guider	ul li:first-of-type a
+{
+	font-size: 18px;
+}
+#erweima img
+{
+    width: 120px;
+    height: 120px;
+}
+#left-header
+{
+	height:80px;
+}
+.guidesel a
+{
+	line-height:80px;
+	font-size:20px;
+}
+.guide a
+{
+	line-height:80px;
+	font-size:20px;
+}
+#filter
+{
+	height:100px;
+
+}
+#filter>:first-child
+{
+	height: 90px;
+}
+input[type=search]
+{
+	height: 60px;
+	margin-top: 10px;	
+}
+.searchbtn
+{    
+	line-height: 60px;
+	height: 60px;
+	margin-top: 10px;
+	
+}
+.list1
+{
+	height: 60px;
+}
+.list1 span
+{
+	line-height: 60px;
+}
+.list2
+{
+	height: 60px;
+}
+.list2 span
+{
+	line-height: 60px;
+}
+.albumImg
+{
+	width: 35px;
+	height: 35px;
+	margin-top: 13px;
+}
+.page
+{
+	height: 70px;
+}
+.page span
+{
+	line-height: 50px;
+	height: 50px;
+}
+#footer li
+{
+	margin: 0 25px;
+	font-size: 17px;
+	line-height: 40px;
+}
+#player
+{
+	width: 320px;
+	height: 370px;
+	margin: 50% auto;
+
+}
+#playlist
+{
+	margin-top: 20px;
+	width:320px;
+}
+#playlist li
+{
+	font-size: 15px;
+    	line-height: 2;
+	padding-left: 10px;
+}
+#player .ctrl .progress .timer
+{
+	font-size: 15px;
+	    margin-top: 12px;
+}
+#player .ctrl
+{
+	    line-height: 18px;
+}
