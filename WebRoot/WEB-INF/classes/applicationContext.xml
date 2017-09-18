@@ -11,37 +11,37 @@
            http://www.springframework.org/schema/tx   
            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 	
-	<bean id="goodsDao" class="org.yicou.daoimpl.GoodsDaoImpl" scope="prototype"></bean>
-	<bean id="goodBean" class="org.yicou.beans.GoodBean" scope="prototype"></bean>
-	<bean id="musicBean" class="org.yicou.beans.MusicBean" scope="prototype"></bean>
-	<bean id="userDao" class="org.yicou.daoimpl.UserDaoImpl" scope="prototype"></bean>
+	<bean id="goodsDao" class="com.daylyweb.yicou.daoimpl.GoodsDaoImpl" scope="prototype"></bean>
+	<bean id="goodBean" class="com.daylyweb.yicou.beans.GoodBean" scope="prototype"></bean>
+	<bean id="musicBean" class="com.daylyweb.yicou.beans.MusicBean" scope="prototype"></bean>
+	<bean id="userDao" class="com.daylyweb.yicou.daoimpl.UserDaoImpl" scope="prototype"></bean>
 	
-	<bean id="goodsService" class="org.yicou.serviceimpl.GoodsServiceImpl" scope="prototype">
+	<bean id="goodsService" class="com.daylyweb.yicou.serviceimpl.GoodsServiceImpl" scope="prototype">
 		<property name="goodsdao" ref="goodsDao"></property>
 	</bean>
-	<bean id="userService" class="org.yicou.serviceimpl.UserServiceImpl" scope="prototype">
+	<bean id="userService" class="com.daylyweb.yicou.serviceimpl.UserServiceImpl" scope="prototype">
 		<property name="userdao" ref="userDao"></property>
 	</bean>
 	
-	<bean id="apiAction" class="org.yicou.action.ApiAction" scope="prototype">
+	<bean id="apiAction" class="com.daylyweb.yicou.action.ApiAction" scope="prototype">
 		<property name="goodsService" ref="goodsService"></property>
 	</bean>
 	
-	<bean id="userAction" class="org.yicou.action.UserAction" scope="prototype">
+	<bean id="userAction" class="com.daylyweb.yicou.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 		<property name="mailutil" ref="mailutil"></property>
 	</bean>
-	<bean id="musicAction" class="org.yicou.action.MusicAction" scope="prototype">
+	<bean id="musicAction" class="com.daylyweb.yicou.action.MusicAction" scope="prototype">
  		<property name="musicUtil" ref="musicUtil"></property>
 	</bean>
 	
- 	<bean id="getGoodsCallable" class="org.yicou.util.GetGoodsCallable" scope="prototype">
+ 	<bean id="getGoodsCallable" class="com.daylyweb.yicou.util.GetGoodsCallable" scope="prototype">
  		<property name="goodsService" ref="goodsService"></property>
  		<property name="goodBean" ref="goodBean"></property>
 	</bean>
-	<bean id="musicUtil" class="org.yicou.util.MusicUtil" scope="prototype"></bean>
-	<bean id="mailutil" class="org.yicou.util.MailUtil" scope="prototype"></bean>
-	<bean id="aesutil" class="org.yicou.util.AesUtil" scope="prototype"></bean>
+	<bean id="musicUtil" class="com.daylyweb.yicou.util.MusicUtil" scope="prototype"></bean>
+	<bean id="mailutil" class="com.daylyweb.yicou.util.MailUtil" scope="prototype"></bean>
+	<bean id="aesutil" class="com.daylyweb.yicou.util.AesUtil" scope="prototype"></bean>
 	
 	
 </beans>
